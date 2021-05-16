@@ -46,15 +46,15 @@
 
 ### 商品管理
 
-![1621156514886](C:\Users\hp\AppData\Roaming\Typora\typora-user-images\1621156514886.png)
+![1621156514886](readme/1.png)
 
 #### 审核商品
 
-![1621156619784](C:\Users\hp\AppData\Roaming\Typora\typora-user-images\1621156619784.png)
+![1621156619784](readme/2.png)
 
 #### 是否上首页推荐
 
-![1621156684026](C:\Users\hp\AppData\Roaming\Typora\typora-user-images\1621156684026.png)
+![1621156684026](readme/3.png)
 
 ### 轮播图管理
 
@@ -80,8 +80,8 @@
 
 可以对用户进行禁用，信息修改
 
-![1621156964926](C:\Users\hp\AppData\Roaming\Typora\typora-user-images\1621156964926.png)
+![1621156964926](readme/4.png)
 
-![1621157054588](C:\Users\hp\AppData\Roaming\Typora\typora-user-images\1621157054588.png)
+![1621157054588](readme/5.png)
 
 # 
