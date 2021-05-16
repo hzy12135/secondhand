@@ -8,37 +8,37 @@
 
 ### 首页
 
-![1621155481197](C:\Users\hp\AppData\Roaming\Typora\typora-user-images\1621155481197.png)
+![1621155481197](readme/shouye.png)
 
 ### 二手物品
 
-![1621155532807](C:\Users\hp\AppData\Roaming\Typora\typora-user-images\1621155532807.png)
+![1621155532807](readme/ershou.png)
 
-![1621155629576](C:\Users\hp\AppData\Roaming\Typora\typora-user-images\1621155629576.png)
+![1621155629576](readme/detail.png)
 
 ### 发布物品
 
-![1621155705028](C:\Users\hp\AppData\Roaming\Typora\typora-user-images\1621155705028.png)
+![1621155705028](readme/fabu.png)
 
 ### 我的界面
 
-![1621155899815](C:\Users\hp\AppData\Roaming\Typora\typora-user-images\1621155899815.png)
+![1621155899815](readme/wode.png)
 
-![1621155934798](C:\Users\hp\AppData\Roaming\Typora\typora-user-images\1621155934798.png)
+![1621155934798](readme/dingdan.png)
 
 **我的发布跟我的订单差不多就不截图了**
 
-![1621156079325](C:\Users\hp\AppData\Roaming\Typora\typora-user-images\1621156079325.png)
+![1621156079325](readme/shenhen.png)
 
 ### 上门回收
 
-![1621156190510](C:\Users\hp\AppData\Roaming\Typora\typora-user-images\1621156190510.png)
+![1621156190510](readme/huishou.png)
 
 ### 新品推荐
 
 按时间降序排列，最新发布的在最上面
 
-![1621156288587](C:\Users\hp\AppData\Roaming\Typora\typora-user-images\1621156288587.png)
+![1621156288587](readme/xinping.png)
 
 ## 后台功能
 
