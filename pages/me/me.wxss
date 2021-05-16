@@ -1,0 +1,68 @@
+page {
+  background: #f4c903;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+  align-items: center;
+  background: #f4c903;
+
+}
+
+.btn-login {
+  padding: 8%;
+  background: white;
+}
+
+.userinfo-avatar {
+  border-radius: 128rpx;
+  width: 128rpx;
+  height: 128rpx;
+  margin-block-start: 10px;
+
+}
+
+.userinfo-nickname {
+  margin-top: 20rpx;
+  font-size: 38rpx;
+}
+
+.tuichu {
+  font-size: 32rpx;
+  color: gray;
+  margin-top: 15rpx;
+}
+
+.runner_desc {
+  font-size: 10pt;
+  color: red
+}
+
+.dizhizi {
+  color: white
+}
+
+.dizhi {
+  margin-top: 200px;
+}
+
+/*  下面是关键去除边框 */
+.button {
+  width: 100%;
+  background: white;
+  border: none;
+  text-align: left;
+  padding: 0px;
+  margin: 0px;
+  line-height: 1.5;
+  font-size: 16px
+}
+
+/*  下面是关键去除边框 */
+.button::after {
+  border: none;
+  border-radius: 0;
+}

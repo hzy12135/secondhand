@@ -1,0 +1,150 @@
+{
+  "cloudfunctionRoot": "cloud/",
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": false,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.15.0",
+  "appid": "",
+  "projectname": "%E6%A0%A1%E5%9B%AD%E4%BA%8C%E6%89%8B%E5%95%86%E5%9F%8E",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": 1,
+          "name": "我的订单",
+          "pathName": "pages/myOrder/myOrder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 1,
+          "name": "首页",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/myComment/myComment",
+          "pathName": "pages/myComment/myComment",
+          "query": "goodid=79550af26033ab5b0676781a6ca0ea1a",
+          "scene": null
+        },
+        {
+          "name": "pages/mall/mall",
+          "pathName": "pages/mall/mall",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/pay/pay",
+          "pathName": "pages/pay/pay",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/detail/detail",
+          "pathName": "pages/detail/detail",
+          "query": "goodid=79550af26033ab5b0676781a6ca0ea1a",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/seller",
+          "pathName": "pages/seller/seller",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/mycomment/mycomment",
+          "pathName": "pages/mycomment/mycomment",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/me/me",
+          "pathName": "pages/me/me",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/huishou/huishou",
+          "pathName": "pages/huishou/huishou",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/fabu/fabu",
+          "pathName": "pages/fabu/fabu",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/newGood/newGood",
+          "pathName": "pages/newGood/newGood",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/pay/pay",
+          "pathName": "pages/pay/pay",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

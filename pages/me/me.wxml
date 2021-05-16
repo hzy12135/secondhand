@@ -1,0 +1,44 @@
+<!--pages/me/me.wxml-->
+<view class="header" wx:if="{{isShowUserName}}" bindtap='change'>
+	<image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+	<text class="userinfo-nickname">{{userInfo.realname?userInfo.realname:userInfo.nickName}}</text>
+	<text class="tuichu" bindtap="tuichu">退出登录</text>
+</view>
+<!--如果用户没有授权，显示登陆按钮  -->
+<view wx:if="{{!isShowUserName}}" class="btn-login">
+	<button  type="primary" bindtap="getUserProfile">授权登陆</button>
+</view>
+<view class='line_5px' />
+<view wx:if="{{isShowUserName}}">
+
+	<!-- 我的订单 -->
+	<view class='my_item' bindtap="goToMyOrder">
+		<text>我的订单</text>
+		<view class='right_arrow' />
+	</view>
+	<view class='my_item' bindtap="goToMyComment">
+		<text>我的评论</text>
+		<view class='right_arrow' />
+	</view>
+	<view class='my_item' bindtap="goToshenhe">
+		<text>查看审核</text>
+		<view class='right_arrow' />
+	</view>
+	<view class='my_item' bindtap="goToSeller">
+		<text>我发布的</text>
+		<view class='right_arrow' />
+	</view>
+</view>
+
+<!-- 没有登录就可以显示的 -->
+
+<!-- 反馈建议 -->
+<view class='my_item'>
+	<button class="button" open-type="feedback">反馈建议</button>
+	<view class='right_arrow' />
+</view>
+<!-- 在线客服 -->
+<view class='my_item'>
+	<button class="button" open-type="contact">在线客服</button>
+	<view class='right_arrow' />
+</view>

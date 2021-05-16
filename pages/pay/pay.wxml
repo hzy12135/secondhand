@@ -1,0 +1,53 @@
+<!--购物明细 -->
+<view class="mingxi_title">购物明细</view>
+<block wx:for="{{cartList}}" wx:key="index">
+	<view class="mingxi_item">
+		<text class="good_name">{{item.name}} X{{item.quantity}}</text>
+		<text class="base_color">￥{{item.price}}</text>
+	</view>
+</block>
+<!-- 总价 -->
+<view class="zongjia">合计：<span>{{totalPrice}}元，{{totalNum}}份</span></view>
+<!-- 分割线 -->
+<view class="base_line_10rpx"></view>
+<!--备注  -->
+<input bindinput="getRemark" placeholder="请输入备注" value="{{remarks}}" />
+<!-- 分割线 -->
+<view class="base_line_10rpx"></view>
+<!--地址 -->
+<view>
+	<text class='title'>您的地址:</text>
+	<text class='desc'>(具体到宿舍楼和寝室号)</text>
+</view>
+<view>
+	<view class='item_address' wx:if="{{isShowMyAddress}}" bindtap="addAdress">
+		<text class='address_name'>{{address.userName}}</text>
+		<text class='address_phone'>{{address.phone}}</text>
+		<text class='address_desc'>{{address.address}}</text>
+		<view class='right_arrow' />
+	</view>
+	<view wx:if="{{!isShowMyAddress}}" class='my_item' bindtap="addAdress">
+		<text>添加地址</text>
+		<view class='right_arrow' />
+	</view>
+
+</view>
+
+
+<view class="footer_box">
+	<button class="all_money" type="primary" size="{{primarySize}}" disabled="{{disabled}}" bindtap="choosePayWay">
+		总计：{{totalPrice}}元，{{totalNum}}件</button>
+</view>
+<!--选择支付方式弹窗  -->
+<view hidden="{{maskFlag}}" class="modal-mask" bindtap="closePayWay"></view>
+<view animation="{{animationData}}" class="cart_popup">
+	<view class="shopcart_title"><span class="shopcart_close" bindtap="closePayWay">返回</span>请选择付款方式</view>
+	<scroll-view scroll-y style="height:250px;margin-top:35px">
+		<block wx:for="{{payWayList}}" wx:key="index">
+			<view class="cart_cells" data-id="{{item.id}}" bindtap="submitOrder">
+				<view class="cells_name" data-id="{{item.id}}">{{item.package}}</view>
+				<view class="price-box" data-id="{{item.id}}">点击支付{{totalPrice}}元 </view>
+			</view>
+		</block>
+	</scroll-view>
+</view>

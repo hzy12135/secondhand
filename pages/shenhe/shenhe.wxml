@@ -1,0 +1,68 @@
+<!--导入时间格式化工具filter.wxs-->
+<wxs src="../../utils/filter.wxs" module="filters" />
+<!--导航条-->
+<view class="navbar">
+	<lable wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">
+		<text>{{item}}</text>
+	</lable>
+</view>
+<!-- 我发布的商品待审核 -->
+<view wx:if="{{currentTab==0}}">
+	<scroll-view scroll-y wx:if="{{goodList&&goodList.length>0}}">
+		<block wx:for="{{goodList}}" wx:key="index">
+			<view class="good_item" data-id="{{item._id}}" bindtap="goDetail">
+				<image class="cai_img" src="{{item.img[0]}}" />
+				<view class="cai_root2">
+					<view class="cai_title">{{item.name}}</view>
+					<view class="cai_sell">数量：{{item.num}} </view>
+					<view class=good_bottom">
+            <view class="good_price">{{item.price}}</view>
+            <view class="shenhe" >待审核</view>
+						<view class="delete" catchtap="delete" data-id="{{item._id}}">删除</view>
+					</view>
+				</view>
+			</view>
+		</block>
+	</scroll-view>
+
+</view>
+<!-- 我发布的商品审核通过 -->
+<view wx:if="{{currentTab==1}}">
+	<scroll-view scroll-y wx:if="{{goodList&&goodList.length>0}}">
+		<block wx:for="{{goodList}}" wx:key="index">
+			<view class="good_item" data-id="{{item._id}}" bindtap="goDetail">
+				<image class="cai_img" src="{{item.img[0]}}" />
+				<view class="cai_root2">
+					<view class="cai_title">{{item.name}}</view>
+					<view class="cai_sell">数量：{{item.num}} </view>
+					<view class=good_bottom">
+            <view class="good_price">{{item.price}}</view>
+            <view class="pass" >审核通过</view>
+						<view class="delete" catchtap="delete" data-id="{{item._id}}">删除</view>
+					</view>
+				</view>
+			</view>
+		</block>
+	</scroll-view>
+
+</view>
+<!-- 我发布的商品未通过 -->
+<view wx:if="{{currentTab==2}}">
+	<scroll-view scroll-y wx:if="{{goodList&&goodList.length>0}}">
+		<block wx:for="{{goodList}}" wx:key="index">
+			<view class="good_item" data-id="{{item._id}}" bindtap="goDetail">
+				<image class="cai_img" src="{{item.img[0]}}" />
+				<view class="cai_root2">
+					<view class="cai_title">{{item.name}}</view>
+					<view class="cai_sell">数量：{{item.num}} </view>
+					<view class=good_bottom">
+            <view class="good_price">{{item.price}}</view>
+            <view class="nopass" >审核未通过</view>
+						<view class="delete" catchtap="delete" data-id="{{item._id}}">删除</view>
+					</view>
+				</view>
+			</view>
+		</block>
+	</scroll-view>
+</view>
+

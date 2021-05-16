@@ -1,0 +1,91 @@
+<!-- 菜单区域  -->
+<view class="main">
+  <scroll-view scroll-y="true" scroll-with-animation="true" bindscroll="rightScrollFn" class="left">
+    <view wx:for="{{menuArr}}" data-myid="{{item.id}}" wx:key="index"
+      class="scroll-view-item left-tab {{leftActiveNum==item.id ? 'active' : ''}}" bindtap="leftClickFn">{{item.title}}
+    </view>
+  </scroll-view>
+
+  <scroll-view scroll-y="true" scroll-with-animation="true" bindscroll="rightScrollFn" class="right"
+    scroll-into-view="top{{Tab}}">
+    <!--
+        1,先通过id="top{{item.id}}"来指定每个代码块的id值
+        2,scroll-into-view="top{{Tab}}"可以滑动到指定的条目,
+        由于scroll-into-view="0" 有误，id 属性值格式错误，
+        应以字母开头，且只能包含字母、数字、中划线、下划线、
+        英文冒号和英文句点，所以我们这里以top开头-->
+    <view wx:for="{{menuArr}}" wx:key="index" id="top{{item.id}}" class="scroll-view-item rightblock">
+      <view class="title">{{item.title}}</view>
+      <block wx:for="{{item.list}}" wx:key="index">
+        <view class="caipin_item" data-id="{{item._id}}" bindtap="goDetail">
+          <image class="cai_img" src="{{item.img[0]}}" />
+          <view class="cai_root2">
+            <view class="cai_title" data-index="{{index}}">{{item.name}}</view>
+            <view class="cai_sell">剩余：{{item.num}} </view>
+            <view class="price-stepper">
+              <view class="cai_price" data-index="{{index}}">{{item.price}}</view>
+              <view class="stepper">
+                <view catchtap="minusCount" data-item="{{item}}">
+                  <image class="jiajian" src="/image/jian.png" />
+                </view>
+                <view class="value" data-id="{{item._id}}">
+                  {{item.quantity}}</view>
+                <view catchtap="addCount" data-item="{{item}}">
+                  <image class="jiajian" src="/image/jia.png" />
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>
+
+<!--页面底部区域  -->
+<view class="bottom_box">
+  <view class="shop_cartBox" bindtap="cascadeToggle">
+    <image class="shopCart_img" src="/image/shopCart.png"></image>
+  </view>
+  <view class="all_money">总计:{{totalPrice}}元，{{totalNum}}件</view>
+  <view class="choose_ok" bindtap="gotoOrder">选好了</view>
+</view>
+
+<!--购物车弹窗  -->
+<view hidden="{{maskFlag}}" class="modal-mask" bindtap="cascadeToggle"></view>
+<view animation="{{animationData}}" class="cart_popup">
+  <view class="shopcart_title">
+    <span class="shopcart_close" bindtap="cascadeToggle">返回</span>购物车
+    <span class="shopcart_deleteAll" bindtap="cleanList">清空购物车</span>
+  </view>
+  <scroll-view scroll-y style="height:250px;margin-top:35px">
+    <block wx:for="{{cartList}}" wx:key="index">
+      <view class="cart_cells" wx:if="{{item.quantity > 0}}">
+        <view class="cells_name" data-index="{{index}}">{{item.name}}</view>
+        <view class="cells_price" data-index="{{index}}">{{item.price}}</view>
+        <view class="price-box">
+          <!-- 减号 -->
+          <view hidden="{{item.quantity<=0}}" data-item="{{item}}" bindtap="minusCount">
+            <image class="jiajian" src="/image/jian.png" />
+          </view>
+          <!-- 数量 -->
+          <view class="value" style="color:#ff9600;margin-top:8rpx" hidden="{{item.quantity<=0}}" data-id="{{item.id}}">
+            {{item.quantity}}</view>
+          <!-- 加号 -->
+          <view bindtap="addCount" data-item="{{item}}">
+            <image class="jiajian" src="/image/jia.png" />
+          </view>
+        </view>
+        <icon class="shopcart_delete" type="clear" size="18" data-index="{{index}}" data-id="{{item._id}}"
+          bindtap="deleteOne" />
+      </view>
+    </block>
+  </scroll-view>
+</view>
+<!-- 提交订单时还未登录的弹窗 -->
+<view class='toast_box' hidden='{{!isShowAddressSetting}}' bindtap="closeLoginView">
+  <view class='toastbg'></view>
+  <view class='showToast'>
+    <button class="toast_btn"  bindtap="goLogin">授权登陆</button>
+  </view>
+</view>

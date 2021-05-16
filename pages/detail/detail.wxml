@@ -1,0 +1,120 @@
+<!--导入时间格式化工具filter.wxs-->
+<wxs src="../../utils/filter.wxs" module="filters" />
+<view wx:if="{{good}}" class="root">
+	<!-- 顶部轮播图 -->
+	<view>
+		<swiper indicator-dots="{{true}}" indicator-color="#f4c903" autoplay="true" circular="true" >
+			<block wx:for="{{good.img}}" wx:key="banner">
+				<swiper-item bindtap="previewImg">
+					<image src='{{item}}'  style="width:100%;height:100%;" />
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+	<!-- 商品信息 -->
+	<view class="good_root">
+		<view class="good_title">{{good.name}}</view>
+		<view class="good_num">剩余数量：{{good.num}} </view>
+		<view class="price-stepper">
+			<view class="good_price">{{good.price}}</view>
+			<view class="stepper">
+				<view bindtap="minusCount" data-item="{{good}}">
+					<image class="jiajian" src="/image/jian.png" />
+				</view>
+				<view class="value">
+					{{good.quantity}}</view>
+				<view bindtap="addCount" data-item="{{good}}">
+					<image class="jiajian" src="/image/jia.png" />
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 卖家信息 -->
+<view class="seller_root" bindtap="gotomessage" data-openid="{{good._openid}}">
+	<view class="pailei">
+	<image class='img_left' src='{{good.sellerimg}}' /> 
+	<view class='content'>{{good.sellername}}</view>
+</view>
+	<view class="top_right">
+		<text class="phone">联系电话：</text>
+		<text class="name">{{good.phone}}</text>
+	</view>
+</view>
+
+	<!-- 发布时间 -->
+	<view class="good_time">商品发布时间:{{good._createTime?filters.formatDate(good._createTime):''}}
+
+	</view>
+	<!-- 商品描述 -->
+	<view class="good_content">物品描述：</view>
+	<view class="good_content">{{good.content}}</view>
+	<!-- 评论区域 -->
+	<view wx:if="{{list&&list.length>0}}">
+		<view class="pingjia_tip">用户评价:</view>
+		<view class='cont_count' wx:for="{{list}}" wx:key="key">
+			<view class="item_root">
+				<view class="top_root">
+					<image class='img_left' src='{{item.avatarUrl}}' />
+					<view class="top_right">
+						<text class='name'>{{item._createTime?filters.formatDate(item._createTime):''}}</text>
+						<text class='name'>{{item.name}}评论：</text>
+					</view>
+				</view>
+				<view class='content'>{{item.content}}</view>
+			</view>
+		</view>
+	</view>
+
+	<!--页面底部区域  -->
+	<view class="bottom_box">
+		<view class="shop_cartBox" bindtap="cascadeToggle">
+			<image class="shopCart_img" src="/image/shopCart.png"></image>
+		</view>
+		<view class="all_money">总计:{{totalPrice}}元，{{totalNum}}件</view>
+		<view class="choose_ok" bindtap="gotoOrder">选好了</view>
+	</view>
+
+	<!--购物车弹窗  -->
+	<view hidden="{{maskFlag}}" class="modal-mask" bindtap="cascadeToggle"></view>
+	<view animation="{{animationData}}" class="cart_popup">
+		<view class="shopcart_title">
+			<span class="shopcart_close" bindtap="cascadeToggle">返回</span>购物车
+			<span class="shopcart_deleteAll" bindtap="cleanList">清空购物车</span>
+		</view>
+		<scroll-view scroll-y style="height:250px;margin-top:35px">
+			<block wx:for="{{cartList}}" wx:key="index">
+				<view class="cart_cells" wx:if="{{item.quantity > 0}}">
+					<view class="cells_name">{{item.name}}</view>
+					<view class="cells_price">{{item.price}}</view>
+					<view class="price-box">
+						<!-- 减号 -->
+						<view hidden="{{item.quantity<=0}}" data-item="{{item}}" bindtap="minusCount">
+							<image class="jiajian" src="/image/jian.png" />
+						</view>
+						<!-- 数量 -->
+						<view class="value" style="color:#ff9600;margin-top:8rpx" hidden="{{item.quantity<=0}}"
+							data-id="{{item.id}}">
+							{{item.quantity}}</view>
+						<!-- 加号 -->
+						<view bindtap="addCount" data-item="{{item}}">
+							<image class="jiajian" src="/image/jia.png" />
+						</view>
+					</view>
+					<icon class="shopcart_delete" type="clear" size="18" data-index="{{index}}" data-id="{{item._id}}"
+						bindtap="deleteOne" />
+				</view>
+			</block>
+		</scroll-view>
+	</view>
+	<!-- 提交订单时还未登录的弹窗 -->
+	<view class='toast_box' hidden='{{!isShowAddressSetting}}' bindtap="closeLoginView">
+		<view class='toastbg'></view>
+		<view class='showToast'>
+			<button class="toast_btn"  type="primary" bindtap="goLogin">授权登陆</button>
+		</view>
+	</view>
+</view>
+<!-- 否则 -->
+<view wx:else class='nothing'>
+	<label class='none_tab'>商品不存在~~</label>
+</view>

@@ -1,0 +1,62 @@
+{
+  "pages": [
+    
+    "pages/home/home",  
+    "pages/huishou/huishou",
+    "pages/fabu/fabu",
+    "pages/mall/mall",
+    "pages/detail/detail",
+    "pages/pay/pay",
+    "pages/newGood/newGood",
+    "pages/myComment/myComment",
+    "pages/myOrder/myOrder",
+    "pages/me/me",
+    "pages/seller/seller",
+    "pages/search/search",
+    "pages/no/no",
+    "pages/kefu/kefu",
+    "pages/shenhe/shenhe"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#7FFFD4",
+    "navigationBarTitleText": "校园淘二手平台",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "black",
+    "selectedColor": "#f4c903",
+    "borderStyle": "black",
+    "list": [{
+        "selectedIconPath": "image/tab1-ok.png",
+        "iconPath": "image/tab1.png",
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "image/tab2-ok.png",
+        "iconPath": "image/tab2.png",
+        "pagePath": "pages/fabu/fabu",
+        "text": "发布"
+      },
+      {
+        "selectedIconPath": "image/tab3-ok.png",
+        "iconPath": "image/tab3.png",
+        "pagePath": "pages/me/me",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {
+    "scope.address": {
+      "desc": "获取收货地址"
+    },
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    },
+    "scope.userInfo": {
+      "desc": "用户信息"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

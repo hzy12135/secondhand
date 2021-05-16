@@ -1,0 +1,63 @@
+<!--导入时间格式化工具filter.wxs-->
+<wxs src="../../utils/filter.wxs" module="filters" />
+<!--导航条-->
+<view class="navbar">
+	<lable wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">
+		<text>{{item}}</text>
+	</lable>
+</view>
+<!-- 我发布的商品 -->
+<view wx:if="{{currentTab==0}}">
+	<scroll-view scroll-y wx:if="{{goodList&&goodList.length>0}}">
+		<block wx:for="{{goodList}}" wx:key="index">
+			<view class="good_item" data-id="{{item._id}}" bindtap="goDetail">
+				<image class="cai_img" src="{{item.img[0]}}" />
+				<view class="cai_root2">
+					<view class="cai_title">{{item.name}}</view>
+					<view class="cai_sell">剩余：{{item.num}} </view>
+					<view class=good_bottom">
+						<view class="good_price">{{item.price}}</view>
+						<view class="delete" catchtap="delete" data-id="{{item._id}}">删除</view>
+					</view>
+				</view>
+			</view>
+		</block>
+	</scroll-view>
+	<!-- 否则 -->
+	<view wx:else style="margin-top:16rpx;text-align: center;">
+		<button bindtap="goFabu" size="mini" style="margin-top:80rpx;">赶紧去发布你的商品吧</button>
+	</view>
+</view>
+
+<!-- 订单部分 -->
+<view wx:if="{{currentTab!=0}}">
+	<view wx:if="{{list.length>0}}">
+		<!-- 外层 -->
+		<view class='cont_count' wx:for="{{list}}" wx:key="key">
+			<!-- 编号 -->
+			<view class='dingdanbianhao'>订单编号:{{item._id}} </view>
+
+			<view class="content">
+				<!-- 列表 -->
+				<view class='mingxi'>
+					<view class="mingxi_item">
+						<text>{{item.good.name}}</text>
+						<text class="mingxi_price">{{item.good.quantity}}个</text>
+					</view>
+				</view>
+				<!-- //-1订单取消,0新下单发货,1待用户评价,2订单已完成 -->
+				<view wx:if="{{item.status!=-1}}" class='coent_list'>
+					<label wx:if="{{item.status==0}}" class='dingdanbtn' data-id='{{item._id}}'
+						bindtap='songda'>已送达</label>
+				</view>
+			</view>
+			<view class='dibuttxt'>地址:{{item.address}}</view>
+			<view class='dibuttxt'>下单时间:{{item._createTime?filters.formatDate(item._createTime):''}}</view>
+		</view>
+	</view>
+	<!-- 否则 -->
+	<view wx:else style="margin-top:16rpx;text-align: center;">
+		<label class='none_tab'>数据为空哦~~</label>
+	</view>
+
+</view>

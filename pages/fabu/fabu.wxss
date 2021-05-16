@@ -1,0 +1,166 @@
+page{
+  background-color: gainsboro;
+}
+.shuxi{
+  border-bottom-right-radius: 25rpx;
+  border-bottom-left-radius: 25rpx;
+  background-color: white;
+  border-bottom: solid 1rpx;
+}
+.leixing{
+  border-radius: 25rpx;
+  background-color: white;
+  margin: 15rpx;
+  border: solid 1rpx ;
+}
+.shuxing{
+  background-color: white;
+  border-radius: 25rpx;
+  border-top: solid 1rpx;
+  border-bottom: solid 1rpx;
+  margin-bottom: 15rpx;
+}
+
+.rightxiala {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  padding: 3px;
+  position: absolute;
+  right: 15px;
+  /* margin-left: 66%; */
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  margin: 13rpx 35rpx;
+}
+.title {
+  color: black;
+  font-size: 40rpx;
+}
+.zhuyi {
+  color: red;
+  font-size: 20rpx;
+}
+
+.input {
+  border: solid 1px gainsboro;
+  width: 98%;
+  margin: 1%;
+  border-radius: 10px;
+}
+
+.desc {
+  margin-top: 25rpx;
+  width: 98%;
+  border: solid 1px gainsboro;
+  margin: 1%;
+  height: 150rpx;
+  border-radius: 10px;
+}
+
+.picker {
+  color: gray;
+  margin: 30rpx;
+  font-size: 36rpx;
+  border: solid 1px gainsboro;
+  border-radius: 10px;
+  /* text-align: center; */
+  
+}
+
+.xiala {
+  position: absolute;
+  right: 13px; 
+  width: 50rpx;
+  height: 45rpx;
+  border-radius: 10px;
+  
+}
+
+.imageRootAll {
+  margin-top: 30rpx;
+  margin-bottom: 60rpx;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+.imgItem {
+  margin: 6rpx;
+  position: relative;
+  width: 176rpx;
+  height: 176rpx;
+  
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
+
+.closeImg {
+  position: absolute;
+  right: 0px;
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  
+}
+/* 还未登录时的弹窗 */
+.toast-box {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+.toastbg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  background: #000;
+  z-index: 666;
+}
+
+
+.showToast {
+  position: absolute;
+  background: white;
+  opacity: 1;
+  width: 100%;
+  height: 300rpx;
+  bottom: 0;
+  z-index: 888;
+}
+
+.toast_btn {
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 发布按钮隐藏 */
+/* button[class="hide"]::after{
+  border: none;
+  visibility:hidden
+} */
+
+.hide_btn {
+  width: 100%;
+  height: 80rpx;
+  position: fixed;
+  bottom: 0;
+}

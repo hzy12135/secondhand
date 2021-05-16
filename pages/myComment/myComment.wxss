@@ -1,0 +1,46 @@
+/* 列表样式 */
+
+.item_root {
+  border-bottom: 3rpx solid gainsboro;
+  padding-bottom: 10rpx;
+}
+
+.top_root {
+  display: flex;
+  flex-direction: row;
+  /* 上下居中 */
+  align-items: center;
+}
+
+.item_top {
+  display: flex;
+}
+
+.name {
+  flex: 1;
+  font-size: 38rpx;
+  color: black;
+}
+
+.detail {
+  margin: 10rpx;
+  font-size: 30rpx;
+  color: blue;
+}
+
+.time {
+  font-size: 26rpx;
+  margin-left: 10rpx;
+}
+
+.content {
+  margin: 5rpx 25rpx;
+  font-size: 24rpx;
+  line-height: 40rpx;
+}
+
+/* 数据为空 */
+.nothing {
+  margin-top: 40rpx;
+  text-align: center;
+}

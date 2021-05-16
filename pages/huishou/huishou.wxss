@@ -1,0 +1,33 @@
+/*列表  */
+.item {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
+  border-bottom: 1px gainsboro solid;
+  background-color: #ffffff;
+  margin-top: 3rpx;
+}
+
+.item_name {
+  font-size: 45rpx;
+}
+
+.item_lianxi {
+  font-size: 33rpx;
+  color: gray;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25rpx;
+}
+
+.item2_call {
+  color: orange;
+  border: 1px solid orange;
+  padding: 3rpx 10rpx;
+}
+
+.item2_weixin {
+  color: green;
+  border: 1px solid green;
+  padding: 3rpx 10rpx;
+}

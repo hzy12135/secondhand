@@ -1,0 +1,54 @@
+<form catchsubmit="send" >
+  <view class="shuxi">
+  <text class="title">商品名</text>
+  <input class="input" name="name" />
+  <text class="title">商品价格(元)</text>
+  <input class="input" name="price" type="number" />
+  <text class="title">商品数量</text>
+  <input class="input" name="num" type="number" />
+</view>
+<view class="leixing">
+  <text class="title">商品类型</text>
+  <!-- 选择商品类型 -->
+  <picker bindchange="bindPickerChange" value="{{array[index]}}" range="{{array}}" name="type">
+    <view class="picker" >
+      <view class="rightxiala"/> 
+      当前选择：{{array[index]}}     
+    </view>
+  </picker>
+</view >
+<view class="shuxing">
+  <text class="title">商品描述</text>
+  <textarea class="desc" name="content" placeholder="不少于6个字符"/>
+  <text class="title">联系电话</text>
+  <input class="input" name="phone" type="number" />
+  <text class="title">商品图片</text>
+  <view> 
+    <text class="zhuyi">*最多可以选取8张图片</text>
+  </view>
+ 
+  <!-- 图片区域 -->
+  <view class="imageRootAll">
+  <block wx:for="{{imgList}}" wx:key="index">
+    <view class="imgItem">
+      <image class="img" src='{{item}}' mode='aspectFill'></image>
+      <image class="closeImg" bindtap="DeleteImg" src="/image/close.png" data-index="{{index}}"/>
+    </view>
+  </block>
+  <!-- 选择图片按钮 -->
+  <view wx:if="{{imgList.length<8}}" class="imgItem" bindtap="ChooseImage">
+    <image class="photo"  src="/image/photo.png"></image>
+  </view>
+</view>
+</view>
+<view class="hide_btn">
+    <button   type="primary" formType="submit" >发布商品</button>
+  </view>
+</form>
+
+<view class='toast_box' hidden='{{!isShowAddressSetting}}' bindtap="closeLoginView">
+		<view class='toastbg'></view>
+		<view class='showToast'>
+			<button class="toast_btn"  type="primary" bindtap="getUserProfile">授权登陆</button>
+		</view>
+  </view>

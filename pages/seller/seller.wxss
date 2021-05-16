@@ -1,0 +1,188 @@
+/* 顶部菜单切换 */
+page {
+  background-color: gainsboro;
+}
+
+.navbar {
+  display: flex;
+  background: #fff;
+}
+
+.none_tab {
+  position: relative;
+  top: 20rpx;
+  color: #999;
+  font-size: 32rpx;
+}
+
+.navbar .item {
+  /* 默认选中菜单 */
+  position: relative;
+  flex: auto;
+  font-size: 27rpx;
+  width: 100rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #333;
+  border-bottom: 6rpx solid #ddd;
+}
+
+
+
+.navbar .item.active {
+  /* 选中菜单样式 */
+  color: #333;
+  border-bottom: 6rpx solid #d66058;
+}
+
+
+
+.navbar .item.active:after {
+  /* 字体 */
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rpx;
+}
+
+/* 全部 */
+
+.cont_count {
+  background-color: white;
+  margin-top: 6rpx;
+  width: 100%;
+  margin-bottom: 6rpx;
+}
+
+.dingdanbianhao {
+  /* 顶单编号 */
+  padding: 10rpx 20rpx;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #d4d4d4;
+}
+
+.dibuttxt {
+  /* 顶单编号 */
+  padding: 10rpx 50rpx;
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #d4d4d4;
+}
+
+/* 内容区域 */
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+}
+
+.mingxi {
+  /* 订单明细 */
+  display: flex;
+  flex-direction: column;
+  flex: 5;
+}
+
+
+.mingxi_item {
+  margin-left: 30rpx;
+  padding: 20rpx;
+
+  border-bottom: 1px solid gainsboro;
+  font-size: 28rpx;
+}
+
+.mingxi_price {
+  margin-left: 20rpx;
+  color: #f4c903;
+}
+
+
+.dingdanbtn {
+  flex: 2;
+  color: darkgoldenrod;
+  margin: 30rpx;
+  width: 180rpx;
+  height: 56rpx;
+  text-align: center;
+  border: 1rpx solid darkgoldenrod;
+  font-size: 30rpx;
+  display: inline-block;
+  line-height: 56rpx;
+}
+
+/*我发布的商品列表  */
+
+
+.good_item {
+  display: flex;
+  align-items: center;
+  padding: 5rpx 0rpx;
+  background-color: #ffffff;
+  margin-top: 3rpx;
+}
+
+.cai_img {
+  width: 120rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  margin-left: 10rpx;
+  margin-right: 30rpx;
+}
+
+.cai_root2 {
+  flex: 1;
+  min-width: 0
+}
+
+.cai_title {
+  font-weight: 400;
+  font-size: 38rpx;
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.cai_sell {
+  font-size: 30rpx;
+  color: gray;
+}
+
+/* 商品底部区域 */
+.good_bottom {
+  padding-right: 20rpx;
+  padding-bottom: 5rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.good_price {
+  /*价格*/
+  font-weight: bold;
+  font-size: 32rpx;
+  color: #ff9600;
+}
+
+.good_price:before {
+  /*人民币符号*/
+  content: "￥";
+  font-size: 14px;
+}
+
+.delete {
+  /* 删除商品 */
+  color: gray;
+  font-size: 30rpx;
+  border: 1px solid gray;
+  padding: 0rpx 20rpx;
+}

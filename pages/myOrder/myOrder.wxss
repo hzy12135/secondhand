@@ -1,0 +1,212 @@
+/* 顶部菜单切换 */
+page {
+  background-color: gainsboro;
+}
+
+.navbar {
+  display: flex;
+  background: #fff;
+}
+
+.none_tab {
+  position: relative;
+  top: 20rpx;
+  color: #999;
+  font-size: 32rpx;
+}
+
+.navbar .item {
+  /* 默认选中菜单 */
+  position: relative;
+  flex: auto;
+  font-size: 27rpx;
+  width: 100rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #333;
+  border-bottom: 6rpx solid #ddd;
+}
+
+
+
+.navbar .item.active {
+  /* 选中菜单样式 */
+  color: #333;
+  border-bottom: 6rpx solid #d66058;
+}
+
+
+
+.navbar .item.active:after {
+  /* 字体 */
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rpx;
+}
+
+/* 全部 */
+
+.cont_count {
+  background-color: white;
+  margin-top: 6rpx;
+  width: 100%;
+  margin-bottom: 6rpx;
+}
+
+.dingdanbianhao {
+  /* 顶单编号 */
+  padding: 10rpx 20rpx;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #d4d4d4;
+}
+
+.dibuttxt {
+  /* 顶单编号 */
+  padding: 10rpx 50rpx;
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #d4d4d4;
+}
+
+/* 内容区域 */
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+}
+
+.mingxi {
+  /* 订单明细 */
+  display: flex;
+  flex-direction: column;
+  flex: 5;
+}
+
+
+.mingxi_item {
+  margin-left: 30rpx;
+  padding: 20rpx;
+
+  border-bottom: 1px solid gainsboro;
+  font-size: 28rpx;
+}
+
+.mingxi_price {
+  margin-left: 20rpx;
+  color: #f4c903;
+}
+
+
+.dingdanbtn {
+  flex: 2;
+  color: darkgoldenrod;
+  margin: 30rpx;
+  width: 180rpx;
+  height: 56rpx;
+  text-align: center;
+  border: 1rpx solid darkgoldenrod;
+  font-size: 30rpx;
+  display: inline-block;
+  line-height: 56rpx;
+}
+
+.cancle {
+  /* 取消订单 */
+  color: gray;
+  margin-right: 15rpx;
+  text-align: center;
+  border: 1rpx solid gray;
+  font-size: 24rpx;
+}
+
+/* 评论弹窗 */
+
+.toast-box {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+.toastbg {
+  opacity: 0.4;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.showToast {
+  position: absolute;
+  opacity: 1;
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 40%;
+}
+
+.toast-title {
+  padding-left: 5%;
+  background-color: #f4c903;
+  color: white;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  border-top-right-radius: 16rpx;
+  border-top-left-radius: 16rpx;
+}
+
+.toast-main {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  background-color: white;
+  text-align: center;
+}
+
+.toast-input {
+  margin-left: 5%;
+  margin-right: 5%;
+  border: 1px solid #ddd;
+  padding-left: 2vh;
+  padding-right: 2vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.textarea_comment {
+  height: 80px;
+  width: 100%;
+}
+
+.toast-button {
+  display: flex;
+}
+
+.button1 {
+  width: 50%;
+}
+
+.button2 {
+  width: 50%;
+}
+
+.button1 button {
+  width: 100%;
+  background-color: white;
+  color: gray;
+  border-radius: 0px;
+  border-bottom-left-radius: 16rpx;
+}
+
+.button2 button {
+  width: 100%;
+  background-color: white;
+  color: black;
+  border-radius: 0px;
+  border-bottom-right-radius: 16rpx;
+}

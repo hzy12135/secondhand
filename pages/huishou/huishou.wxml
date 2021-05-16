@@ -1,0 +1,15 @@
+<view wx:if="{{list&&list.length>0}}">
+  <block wx:for="{{list}}" wx:key="index">
+    <view class="item">
+      <view class="item_name" data-index="{{index}}">{{item.name}}</view>
+      <view class="item_lianxi" bindtap="goPone" data-phone="{{item.phone}}">
+        <text>电话：{{item.phone}}</text>
+        <text class="item2_call">拨打电话</text>
+      </view>
+      <view class="item_lianxi" bindtap="goWeiXin" data-weixin="{{item.weixin}}">
+        <text>微信：{{item.weixin}}</text>
+        <text class="item2_weixin">复制微信</text>
+      </view>
+    </view>
+  </block>
+</view>

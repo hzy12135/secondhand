@@ -1,0 +1,63 @@
+<!--导入时间格式化工具filter.wxs-->
+<wxs src="../../utils/filter.wxs" module="filters" />
+<!--导航条-->
+<view class="navbar">
+	<lable wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique"
+		bindtap="navbarTap">
+		<text>{{item}}</text>
+	</lable>
+</view>
+<view wx:if="{{list.length>0}}">
+	<!-- 外层 -->
+	<view class='cont_count' wx:for="{{list}}" wx:key="key">
+		<!-- 编号 -->
+		<view class='dingdanbianhao'>订单编号:{{item._id}} </view>
+
+		<view class="content">
+			<!-- 列表 -->
+			<view class='mingxi'>
+					<view class="mingxi_item">
+						<text>{{item.good.name}} X{{item.good.quantity}}</text>
+						<text class="mingxi_price"> ￥{{item.good.price}}</text>
+					</view>
+				<view class='dibuttxt'>总价:{{item.good.quantity*item.good.price}}元</view>
+			</view>
+			<!-- //-1订单取消,0新下单待发货,1已收货待评价,2订单已完成 -->
+			<view wx:if="{{item.status!=-1}}" class='coent_list'>
+				<label wx:if="{{item.status==0}}" class='dingdanbtn' data-item='{{item}}' bindtap='shouhuo'>确认收货</label>
+				<label wx:if="{{item.status==0}}" class='cancle' data-item='{{item}}' bindtap='cancleOrder'>取消订单</label>
+				<label wx:if="{{item.status==1}}" class='dingdanbtn' data-item='{{item}}' bindtap='showComment'>去评价</label>
+				<label wx:if="{{item.status==2}}" class='dingdanbtn' bindtap='goCommentPage'>查看评价</label>
+			</view>
+		</view>
+		<view class='dibuttxt'>地址:{{item.address}}</view>
+		<view class='dibuttxt'>下单时间:{{item._createTime?filters.formatDate(item._createTime):''}}</view>
+	</view>
+</view>
+<!-- 否则 -->
+<view wx:else style="margin-top:16rpx;text-align: center;">
+	<label class='none_tab'>数据为空哦~~</label>
+</view>
+
+<!-- 评论弹框 -->
+<view class='toast-box' hidden='{{!isShowComment}}'>
+	<view class='toastbg'></view>
+	<view class='showToast'>
+		<view class='toast-title'>
+			<text>评论弹框</text>
+		</view>
+		<view class='toast-main'>
+			<view class='toast-input'>
+				<textarea class='textarea_comment' placeholder='请输入您的评论内容' bindinput='setValue'></textarea>
+			</view>
+		</view>
+		<view class='toast-button'>
+			<view class='button1' bindtap='cancelComment'>
+				<button>取消</button>
+			</view>
+			<view class='button2' bindtap='submitComment'>
+				<button>确定</button>
+			</view>
+		</view>
+	</view>
+</view>

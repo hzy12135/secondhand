@@ -1,0 +1,22 @@
+<!-- 搜索框 -->
+<view class="searchRoot">
+  <input class="searchInput" bindconfirm='goSearch' confirm-type='search' bindinput="getSearchKey" placeholder="搜索商品"
+    value="{{searchKey}}"></input>
+  <image class="searchImg" bindtap="goSearch" src="/image/sousuo.png"></image>
+</view>
+
+<!-- 列表  -->
+<scroll-view scroll-y>
+  <block wx:for="{{goodList}}" wx:key="index">
+    <view class="good_item" data-id="{{item._id}}" bindtap="goDetail">
+      <image class="cai_img" src="{{item.img[0]}}" />
+      <view class="cai_root2">
+        <view class="cai_title" data-index="{{index}}">{{item.name}}</view>
+        <view class="cai_sell">剩余：{{item.num}} </view>
+        <view class="price-stepper">
+          <view class="cai_price" data-index="{{index}}">{{item.price}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+</scroll-view>
